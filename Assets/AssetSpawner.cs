@@ -8,7 +8,8 @@ public class AssetSpawner : MonoBehaviour
     public List<GameObject> prefabs;
     private int currentIndex = 0;
     private GameObject lastObject;
-    public float waitTime = 3f; 
+    public float waitTime = 3f;
+    public GameObject spawnPos; 
     private void Start()
     {
         StartCoroutine(Spawning());
@@ -20,7 +21,7 @@ public class AssetSpawner : MonoBehaviour
         {
             Destroy(lastObject);
         }
-        lastObject = Instantiate(prefabs[currentIndex], transform.position, Quaternion.identity);
+        lastObject = Instantiate(prefabs[currentIndex], spawnPos.transform.position, Quaternion.identity);
         if (currentIndex >= prefabs.Count-1)
         {
             currentIndex = 0;

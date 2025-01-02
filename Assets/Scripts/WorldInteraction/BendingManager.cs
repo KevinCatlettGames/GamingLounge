@@ -16,12 +16,12 @@ public class BendingManager : MonoBehaviour
     }
 
     private static void OnBeginCameraRendering(ScriptableRenderContext ctx, Camera cam)
-    {
-        cam.cullingMatrix = Matrix4x4.Ortho(-99, 99, -99, 99, 0.001f, 99) * cam.worldToCameraMatrix;           
+    { 
+        //cam.cullingMatrix = Matrix4x4.Ortho(-99, 99, -99, 99, 0.001f, 999f) * cam.worldToCameraMatrix;
     }
 
     private static void OnEndCameraRendering(ScriptableRenderContext ctx, Camera cam)
-    {
-        cam.ResetCullingMatrix();
+    { 
+        //cam.ResetCullingMatrix();
     }
 }
